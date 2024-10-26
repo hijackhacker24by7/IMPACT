@@ -1,10 +1,12 @@
-import logo from './logo.svg';
+import './index.css';
+
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      hello
+    <div className="text-3xl font-bold underline">
+      Hello, world!
     </div>
   );
 }
