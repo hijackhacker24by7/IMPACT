@@ -1,13 +1,13 @@
 import './index.css';
+import Login from './components/Login';
 
 
-import './App.css';
 
 function App() {
   return (
-    <div className="text-3xl font-bold underline">
-      Hello, world!
-    </div>
+    <>
+      <Login />
+    </>
   );
 }
 
