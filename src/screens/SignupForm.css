@@ -1,0 +1,189 @@
+#signupContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #7a4d98, #333333);
+
+    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#signupCardContainer {
+    
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 85%;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); /* Shadow for the child container */
+    
+    border-radius: 20px;
+    
+}
+
+#leftSidebar {
+    margin: 5px;
+    width: 40%;
+   
+    height: 90%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#rightSidebar {
+    margin: 5px;
+    width: 60%;
+    height: 90%;
+   
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#rightSidebar form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftSidebar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+/* Navigation buttons */
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.prev-button {
+    left: 20px;
+}
+
+.next-button {
+    right: 20px;
+}
+
+/* Dots for slide navigation */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+.inputfield {
+    margin: 10px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 8px;
+  
+  
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    
+  
+    font-size: 16px;
+   padding: 10px;
+    transition: border-color 0.3s ease;
+}
+
+/* Container for input */
+.input-container {
+  
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  
+  /* Input field focus styling */
+  .input-container input:focus {
+    border-color: #cccccc;
+  }
+  
+  
+  .login-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background-color:#9b59b6; /* Bootstrap primary color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    width: 150px;
+}
+
+.login-button:hover {
+    background-color: #4e4e4b; /* Darker shade on hover */
+    transform: translateY(-2px);
+}
+
+.login-button:active {
+    transform: translateY(1px);
+}
+#heading{
+    margin: 5px;
+    font-weight: bolder;
+    font-size: 2em;
+ color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-family: 'Arial', sans-serif; 
+}
+#register{
+    color: #7a4d98;
+}
