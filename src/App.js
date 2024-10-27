@@ -1,4 +1,5 @@
 import './index.css';
+
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import './App.css';
@@ -16,7 +17,9 @@ function App() {
         <Route exact path="/Signup" element={ <Signup />} />
       </Switch>
     </Router>
-  );
-}
+=======
+
+
+
 
 export default App;
