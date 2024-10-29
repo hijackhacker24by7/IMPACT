@@ -5,6 +5,16 @@ import { Link } from "react-router-dom";
 export default function Signup() {
   const [selected, setSelected] = useState(''); // State to hold the selected radio button value
 
+ const handlesignup=(e)=>{
+    e.preventDefault()
+    const name=e.target[0]
+    const email=e.target[1]
+    const password=e.target[2]
+    const repeatpassword=e.target[3]
+    const status=selected
+
+    console.log(name.value,email.value,password.value,repeatpassword.value,status);
+ }
 
   return (
     <div class="relative py-20 2xl:py-40 bg-gradient-135 overflow-hidden">
@@ -25,7 +35,7 @@ export default function Signup() {
         </div>
         <div class="w-full lg:w-1/2 px-4">
           <div class="px-6 lg:px-20 py-12 lg:py-24 bg-clay rounded-lg">
-            <form action="#">
+            <form action="#" onSubmit={handlesignup}>
               <h3 class="mb-10 text-2xl text-white font-bold font-heading">Register Account</h3>
 
               <div class="flex items-center pl-6 mb-3 bg-white rounded-full">
@@ -134,28 +144,3 @@ export default function Signup() {
   );
 }
 
-// <div id="leftSidebar">
-//   <img src={images[currentIndex].src} alt={`Slide ${currentIndex + 1}`} />
-
-//   {/* Navigation Buttons */}
-//   <button className="prev-button" onClick={goToPreviousSlide}>
-//     &#10094; {/* Left arrow */}
-//   </button>
-//   <button className="next-button" onClick={goToNextSlideManual}>
-//     &#10095; {/* Right arrow */}
-//   </button>
-
-//   {/* Dots for Slide Navigation */}
-//   <div className="dots-container">
-//     {images.map((_, index) => (
-//       <span
-//         key={index}
-//         className={`dot ${index === currentIndex ? "active" : ""}`}
-//         onClick={() => {
-//           setCurrentIndex(index);
-//           setIsManual(true);
-//         }}
-//       ></span>
-//     ))}
-//   </div>
-// </div>;
