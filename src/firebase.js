@@ -8,7 +8,7 @@ import { getFirestore } from "firebase/firestore";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Import dotenv for environment variables
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 dotenv.config();
 
 const firebaseConfig = {
