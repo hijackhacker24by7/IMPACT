@@ -126,7 +126,7 @@ export default function Signup() {
                     <input
                       class="w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none"
                       type="email"
-                      placeholder="example@habib.me"
+                      placeholder="example@gmail.com"
                     />
                   </div>
                   <div class="flex items-center pl-6 mb-3 bg-white rounded-full">
@@ -249,7 +249,7 @@ export default function Signup() {
                     Get started
                   </button>
                 </form>
-                <Link to="/" className="flex items-center justify-center mt-5">
+                <Link to="/Login" className="flex items-center justify-center mt-5">
                   <span class="-mt-2 text-sm text-gray-200">
                     Already have an account? Login
                   </span>
