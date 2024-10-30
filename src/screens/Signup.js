@@ -1,25 +1,39 @@
 import React, { useState } from "react";
 // import "./SignupForm.css";
 import { Link } from "react-router-dom";
-
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from '../firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 export default function Signup() {
+  const navigate = useNavigate();
   const [selected, setSelected] = useState(""); // State to hold the selected radio button value
-
-  const handlesignup = (e) => {
+  const [warning, setwarning] = useState(false)
+  const handlesignup = async (e) => {
     e.preventDefault();
     const name = e.target[0];
     const email = e.target[1];
     const password = e.target[2];
     const repeatpassword = e.target[3];
     const status = selected;
-
-    console.log(
-      name.value,
-      email.value,
-      password.value,
-      repeatpassword.value,
-      status
-    );
+    if (password.value === repeatpassword.value) {
+      createUserWithEmailAndPassword(auth, email.value, password.value)
+        .then(async (userCredential) => {
+          const user = userCredential.user
+          console.log(user)
+          await setDoc(doc(db, "users", user.uid), {
+            name: name.value,
+            uid: user.uid,
+            role: status
+          })
+        }
+        )
+        navigate("/Login")
+    }
+    else {
+      setwarning(true)
+      console.log(password.value, repeatpassword.value)
+    }
   };
 
   return (
@@ -44,7 +58,8 @@ export default function Signup() {
             {/* form */}
             <div class="w-full lg:w-1/2 px-4">
               <div class="px-6 lg:px-20 py-12 lg:py-24 bg-clay rounded-lg">
-                <form action="#" onSubmit={handlesignup}>
+                <form onSubmit={handlesignup}>
+                  {/* {warning && <p style={{ color: "red" }}>Please fill all the fields</p>} */}
                   <h3 class="mb-10 text-2xl text-white font-bold font-heading">
                     Register Account
                   </h3>
@@ -185,7 +200,7 @@ export default function Signup() {
 
                   {/* dsjfbkfgdskfgskdj */}
                   {/* <div className="min-h-screen flex items-center justify-center bg-gray-100">
-              <div className="p-6 bg-white rounded shadow-md"> */}
+                  <div className="p-6 bg-white rounded shadow-md"> */}
                   {/* ksfbhjkgsdf */}
                   <div className="flex flex-col items-start ">
                     <label className="-mt-2 ml-2 text-m font-bold text-gray-200 mb-2">
