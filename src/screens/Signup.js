@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "./SignupForm.css";
 import { Link } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from '../firebase';
@@ -7,11 +6,16 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
 
+
 export default function Signup() {
+
+
   const navigate = useNavigate();
   const [selected, setSelected] = useState(""); // State to hold the selected radio button value
   // eslint-disable-next-line
-  const [warning, setwarning] = useState(false)
+  const [warning, setwarning] = useState(false);
+
+
   const handlesignup = async (e) => {
     e.preventDefault();
     const name = e.target[0];
@@ -19,6 +23,8 @@ export default function Signup() {
     const password = e.target[2];
     const repeatpassword = e.target[3];
     const status = selected;
+
+
     if (password.value === repeatpassword.value) {
       createUserWithEmailAndPassword(auth, email.value, password.value)
         .then(async (userCredential) => {
@@ -172,7 +178,7 @@ export default function Signup() {
                     <input
                       class="w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none"
                       type="password"
-                      placeholder="Password"
+                      placeholder="Password"              
                     />
                   </div>
                   <div class="flex items-center pl-6 mb-6 bg-white rounded-full">
