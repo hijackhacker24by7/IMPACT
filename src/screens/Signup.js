@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SignupForm.css";
+// import "./SignupForm.css";
 import { Link } from "react-router-dom";
 
 export default function Signup() {
@@ -41,6 +41,7 @@ export default function Signup() {
                 </p>
               </div>
             </div>
+            {/* form */}
             <div class="w-full lg:w-1/2 px-4">
               <div class="px-6 lg:px-20 py-12 lg:py-24 bg-clay rounded-lg">
                 <form action="#" onSubmit={handlesignup}>
@@ -249,7 +250,7 @@ export default function Signup() {
                     Get started
                   </button>
                 </form>
-                <Link to="/Login" className="flex items-center justify-center mt-5">
+                <Link to="/Signin" className="flex items-center justify-center mt-5">
                   <span class="-mt-2 text-sm text-gray-200">
                     Already have an account? Login
                   </span>
