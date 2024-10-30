@@ -1,8 +1,9 @@
 import './index.css';
-
+import Home from './components/Home';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import OrgSignup from './components/OrgSignup';
+import Profile from './components/Profile'
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -15,9 +16,11 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/Org" element={<OrgSignup />} />
         <Route exact path="/Signin" element={<Login />}></Route>
         <Route exact path="/Signup" element={<Signup />} />
+        <Route exact path="/Profile" element={<Profile />} />
       </Switch>
     </Router>
   );

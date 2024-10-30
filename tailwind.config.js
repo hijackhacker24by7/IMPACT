@@ -13,6 +13,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('@heroicons/react/24/solid'), 
   ],
 }
