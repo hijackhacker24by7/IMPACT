@@ -1,9 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -12,7 +14,7 @@ import { getFirestore } from "firebase/firestore";
 //  dotenv.config();
 
 const firebaseConfig = {
-  apiKey: "",
+  apiKey: "AIzaSyBn06WUCwfuYMoMtk0c_lF8xgrylXQUTLc",
   authDomain: "vidyavistar-4bc0e.firebaseapp.com",
   projectId: "vidyavistar-4bc0e",
   storageBucket: "vidyavistar-4bc0e.appspot.com",

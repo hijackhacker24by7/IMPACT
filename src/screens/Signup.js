@@ -5,9 +5,12 @@ import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from '../firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+
+
 export default function Signup() {
   const navigate = useNavigate();
   const [selected, setSelected] = useState(""); // State to hold the selected radio button value
+  // eslint-disable-next-line
   const [warning, setwarning] = useState(false)
   const handlesignup = async (e) => {
     e.preventDefault();
@@ -28,13 +31,14 @@ export default function Signup() {
           })
         }
         )
-        navigate("/Login")
+      navigate("/Signin")
     }
     else {
       setwarning(true)
       console.log(password.value, repeatpassword.value)
     }
   };
+
 
   return (
     <div class="relative py-20 2xl:py-40 bg-gradient-135 overflow-hidden">
