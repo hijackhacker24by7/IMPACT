@@ -5,6 +5,7 @@ import Signup from './screens/Signup';
 import OrgSignup from './components/OrgSignup';
 import Profile from './components/Profile'
 import Header from './components/Header';
+
 import {
   BrowserRouter as Router,
   Routes as Switch,
@@ -15,15 +16,17 @@ import {
 function App() {
   return (
     <div>
-      <Header />
+      
     <Router>
-      <Switch>
-        
+      <Header />
+
+      <Switch>        
         <Route exact path="/" element={<Home />} />
         <Route exact path="/Org" element={<OrgSignup />} />
         <Route exact path="/Signup" element={<Signup />} />
         <Route exact path="/Signin" element={<Login />} />
         <Route exact path="/Profile" element={<Profile />} />
+        
       </Switch>
     </Router>
     </div>

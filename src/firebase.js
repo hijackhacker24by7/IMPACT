@@ -14,7 +14,7 @@ import { getFirestore } from "firebase/firestore";
 //  dotenv.config();
 
 const firebaseConfig = {
-  apiKey: "",
+  apiKey: "AIzaSyBn06WUCwfuYMoMtk0c_lF8xgrylXQUTLc",
   authDomain: "vidyavistar-4bc0e.firebaseapp.com",
   projectId: "vidyavistar-4bc0e",
   storageBucket: "vidyavistar-4bc0e.appspot.com",

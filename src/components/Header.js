@@ -1,21 +1,38 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../assets/logo.png'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
-const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'Team', href: 'Signin', current: false },
-    { name: 'Projects', href: 'Profile', current: false },
-    { name: 'Calendar', href: 'Signup', current: false },
-    { name: 'Reports', href: 'Org', current: false },
-]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 export default function Example() {
+
+    
+        const [navigation, setNavigation] = useState([
+          { name: 'Home', href: '/', current: true },
+          { name: 'OrgSignup', href: '/Org', current: false },
+          { name: 'Signup', href: '/Signup', current: false },
+          { name: 'Login', href: '/Signin', current: false },
+          { name: 'Profile', href: '/Profile', current: false },
+        ]);
+             
+          const handleClick = (index) => {
+            // Handle click event
+            const updatedNavigation = navigation.map((item, idx) => ({
+              ...item,
+              current: idx === index,
+            }));
+            // Update the state
+            setNavigation(updatedNavigation);
+          };
+
+
+
     return (
         <Disclosure as="nav" className="bg-gray-800">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -40,17 +57,18 @@ export default function Example() {
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.name}
-                                        href={item.href}
-                                        aria-current={item.current ? 'page' : undefined}
+                                        to={item.href}
+                                        onClick={() => handleClick(navigation.indexOf(item))}
                                         className={classNames(
                                             item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium',
+                                            'px-3 py-2 rounded-md text-sm font-medium',
                                         )}
+
                                     >
-                                        {item.name}
-                                    </a>
+                                        <span>{item.name}</span>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

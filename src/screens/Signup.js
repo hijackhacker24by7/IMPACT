@@ -152,6 +152,7 @@ export default function Signup() {
                     <input
                       class="w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none"
                       type="email"
+                      required
                       placeholder="example@gmail.com"
                     />
                   </div>
