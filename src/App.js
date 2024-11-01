@@ -12,8 +12,9 @@ import {
   Route,
 } from "react-router-dom";
 
-
+import Dashboard from './screens/Dashboard';
 function App() {
+  
   return (
     <div>
       
@@ -26,7 +27,7 @@ function App() {
         <Route exact path="/Signup" element={<Signup />} />
         <Route exact path="/Signin" element={<Login />} />
         <Route exact path="/Profile" element={<Profile />} />
-        
+        <Route exact path="/Dashboard" element={<Dashboard />} />
       </Switch>
     </Router>
     </div>

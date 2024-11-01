@@ -1,17 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import { auth } from '../firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+    const navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        const email = e.target[0];
-        const password = e.target[1];
+        const email = e.target[0].value;
+        const password = e.target[1].value;
+      
+             signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user
+                console.log(user)
+                
+                navigate("/Dashboard");
+            })
+        
+        .catch( (err)=> {
 
-        console.log(email.value, password.value);
+            console.log(err.message)
+        })
+        
+
     }
- 
+
     return (
         <div class="relative py-20 2xl:py-40 bg-gradient-135 overflow-hidden">
             <div class="relative container px-4 mx-auto">
@@ -109,7 +125,7 @@ export default function Login() {
                                             placeholder="Password"
                                         />
                                     </div>
-                                    
+
                                     <button class="py-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full transition duration-200">
                                         Login
                                     </button>
