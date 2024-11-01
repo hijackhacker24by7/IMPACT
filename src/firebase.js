@@ -12,10 +12,10 @@ import { getFirestore } from "firebase/firestore";
 // Import dotenv for environment variables
 // import dotenv from "dotenv";
 //  dotenv.config();
-const apikey=process.env.APIKEY
+const apikey=process.env.REACT_APP_API_KEY
 
 const firebaseConfig = {
-  apiKey:apikey,
+  apiKey:"AIzaSyBn06WUCwfuYMoMtk0c_lF8xgrylXQUTLc",
   authDomain: "vidyavistar-4bc0e.firebaseapp.com",
   projectId: "vidyavistar-4bc0e",
   storageBucket: "vidyavistar-4bc0e.appspot.com",
