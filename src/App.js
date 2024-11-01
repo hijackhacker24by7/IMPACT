@@ -4,6 +4,7 @@ import Login from './screens/Login';
 import Signup from './screens/Signup';
 import OrgSignup from './components/OrgSignup';
 import Profile from './components/Profile'
+import Header from './components/Header';
 
 import {
   BrowserRouter as Router,
@@ -15,8 +16,12 @@ import Dashboard from './screens/Dashboard';
 function App() {
   
   return (
+    <div>
+      
     <Router>
-      <Switch>
+      <Header />
+
+      <Switch>        
         <Route exact path="/" element={<Home />} />
         <Route exact path="/Org" element={<OrgSignup />} />
         <Route exact path="/Signup" element={<Signup />} />
@@ -25,6 +30,7 @@ function App() {
         <Route exact path="/Dashboard" element={<Dashboard />} />
       </Switch>
     </Router>
+    </div>
   );
 }
 

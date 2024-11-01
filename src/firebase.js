@@ -6,12 +6,6 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Import dotenv for environment variables
-// import dotenv from "dotenv";
-//  dotenv.config();
 const apikey=process.env.REACT_APP_API_KEY
 
 const firebaseConfig = {

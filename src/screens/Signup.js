@@ -159,7 +159,8 @@ export default function Signup() {
                       className={`w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none ${warnings.email ? "border-2 border-red-500" : ""
                         }`}
                       type="email"
-                      placeholder="Email"
+                      required
+                      placeholder="example@gmail.com"
                     />
                   </div>
                   <div class="flex items-center pl-6 mb-3 bg-white rounded-full">
