@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import Profile from './components/Profile'
 
 function Home() {
     return (
@@ -22,6 +23,7 @@ function Home() {
                         <Link to="/Profile" className="flex items-center justify-center mt-5">
                             <button className="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-700">Profile</button>
                         </Link>
+                        
                     </div>
                 </div>
             </div>
