@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import SecureLS from "secure-ls";
 
+const ls = new SecureLS({ encodingType: "aes" });
 export default function Login() {
     const navigate = useNavigate();
 
@@ -16,7 +18,7 @@ export default function Login() {
             .then((userCredential) => {
                 const user = userCredential.user
                 console.log(user)
-                
+                ls.set("user_id", user.uid);
                 navigate("/Dashboard");
             })
         
