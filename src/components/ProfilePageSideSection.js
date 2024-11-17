@@ -13,10 +13,10 @@ function ProfilePageSideSection() {
         setOpen(open === value ? 0 : value);
     };
     const LIST_ITEM_STYLES = "select-none cursor-pointer hover:bg-gray-100 focus:bg-gray-100 active:bg-gray-100 hover:text-gray-900 focus:text-gray-900 active:text-gray-900";
-
+    const main_div='h-[calc(100vh-2rem)] w-full max-w-[20rem] mx-auto p-10 absolute left-5 top-20 shadow-md bg-slate-200'
 
     return (
-        <div className="h-[calc(100vh-2rem)] w-full max-w-[20rem] mx-auto p-10 absolute left-5 top-20 shadow-md bg-slate-200">
+        <div className={main_div}>
         {/* <div className="h-[calc(100vh-2rem)] w-full max-w-[20rem] mx-auto p-6 shadow-md bg-slate-200"> */}
         <div className="mb-2 flex items-center gap-4 p-1">
             <img
@@ -60,8 +60,12 @@ function ProfilePageSideSection() {
                 </div>
                 {open === 2 && (
                     <ul className="pl-12">
-                        <li className={`py-1 ${LIST_ITEM_STYLES}`}>EVENTS</li>
-                        <li className={`py-1 ${LIST_ITEM_STYLES}`}>ALUMANIES</li>
+                        <li className={`py-1 ${LIST_ITEM_STYLES}`}>
+                        <Link to="/Profile/Events">EVENTS</Link>
+                        </li>
+                        <li className={`py-1 ${LIST_ITEM_STYLES}`}>
+                        <Link to="/Profile/CreateEvent">Create Event</Link>
+                        </li>
                     </ul>
                 )}
             </li>

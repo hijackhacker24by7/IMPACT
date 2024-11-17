@@ -31,3 +31,4 @@ yarn-error.log*
 # local files
 /src/components/test.js
 /src/components/test2.js
+/src/components/test3.js
