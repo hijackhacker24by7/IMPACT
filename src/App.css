@@ -1,0 +1,30 @@
+/* For modern browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    transition: width 0.3s;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #b0b0b0;
+    border-radius: 10px;
+    transition: background-color 0.3s, width 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #909090;
+    width: 12px; /* Expands on hover */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #b0b0b0 #f1f1f1;
+}

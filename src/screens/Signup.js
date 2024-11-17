@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./SignupForm.css";
+
 import { Link } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from '../firebase';
@@ -10,8 +10,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Signup() {
   const navigate = useNavigate();
   const [selected, setSelected] = useState(""); // State to hold the selected radio button value
-  // eslint-disable-next-line
-
+  
   const [warnings, setWarnings] = useState({
     name: false,
     email: false,
@@ -59,7 +58,6 @@ export default function Signup() {
     }
   };
   console.log(warnings.matchPassword)
-
   return (
     <div class="relative py-20 2xl:py-40 bg-gradient-135 overflow-hidden">
       <div class="relative container px-4 mx-auto">
@@ -84,7 +82,7 @@ export default function Signup() {
                   <h3 class="mb-10 text-2xl text-white font-bold font-heading">
                     Register Account
                   </h3>
-                  
+
 
                   <div class="flex items-center pl-6 mb-3 bg-white rounded-full">
                     <span class="inline-block pr-3 py-2 border-r border-gray-50">
@@ -114,7 +112,7 @@ export default function Signup() {
                         }`}
                       type="Text"
                       placeholder="Full Name"
-                     
+
                     />
                   </div>
 

@@ -2,6 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 8px; /* Default scrollbar width */
+  height: 8px; /* Default scrollbar height */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, width 0.3s ease; /* Smooth fade and width transition */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light gray background for track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0; /* Default thumb color */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #f0f0f0; /* Space around thumb */
+  transition: background-color 0.3s ease, width 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+::-webkit-scrollbar:hover {
+  width: 12px; /* Expands on hover */
+  opacity: 1; /* Show scrollbar when hovered */
+}
+
+/* Thumb on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #707070; /* Darker color on hover */
+}
+
+/* Up/Down Buttons */
+::-webkit-scrollbar-button {
+  background-color: transparent; /* Transparent default */
+  border-radius: 5px; /* Rounded corners */
+  width: 16px; /* Button width */
+  height: 16px; /* Button height */
+}
+
+/* Up button */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23070707' d='M12 8l-6 6h12z'/%3E%3C/svg%3E") center no-repeat; /* Up arrow */
+}
+
+/* Down button */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23070707' d='M12 16l6-6H6z'/%3E%3C/svg%3E") center no-repeat; /* Down arrow */
+}
+
+/* Button hover effect */
+::-webkit-scrollbar-button:hover {
+  background-color: #d0d0d0; /* Button hover color */
+}
 
 body {
   margin: 0;
@@ -10,6 +64,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
