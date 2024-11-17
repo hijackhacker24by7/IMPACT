@@ -6,7 +6,7 @@ import OrgSignup from './components/OrgSignup';
 import Profile from './components/Profile'
 import Header from './components/Header';
 
-import Test3 from './components/test3';
+// import Test3 from './components/test3';
 import Dashboard from './screens/Dashboard';
 import Eventsinfo from './events/Event';
 import CreateEvent from './events/CreateEvent';
@@ -39,9 +39,9 @@ console.log(userId)
         <Route exact path="/Signin" element={<Login />} />
         <Route exact path="/Profile/*" element={<Profile />} />
         <Route exact path="/Dashboard" element={<Dashboard />} />
-        <Route exact path="/test" element={<Test />} />
+        {/* <Route exact path="/test" element={<Test />} />
         <Route exact path="/test2" element={<Test2 />} />
-        <Route exact path="/test3" element={<Test3 />} />
+        <Route exact path="/test3" element={<Test3 />} /> */}
         <Route exact path="/Profile/Eventd_details" element={<Eventsinfo/>} />
         <Route exact path="/Profile/CreateEvent" element={<CreateEvent/>} />
       </Switch>
