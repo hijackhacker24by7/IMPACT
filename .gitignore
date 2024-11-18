@@ -32,3 +32,4 @@ yarn-error.log*
 /src/components/test.js
 /src/components/test2.js
 /src/components/test3.js
+/src/screens/replybox.js

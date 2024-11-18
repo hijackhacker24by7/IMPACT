@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { collection, query, where, orderBy, onSnapshot } from 'firebase/firestore';  // Import functions from v9+ SDK
 import SecureLS from "secure-ls";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import QueryDetail from './QueryDetail';
 const ls = new SecureLS({ encodingType: "aes" });
 
@@ -11,6 +11,7 @@ export default function QueryList() {
     const [queries, setQueries] = useState([]);
     const [search, setSearch] = useState("");
     const [selectedQueryId, setSelectedQueryId] = useState(null);
+    console.log(userId)
     useEffect(() => {
         const id = ls.get("user_id");
         setUserId(id);
@@ -50,26 +51,40 @@ export default function QueryList() {
     };
 
     return (
-        <div style={{ display: "flex" }}>
-            <div>
+        <div className='p-1 m-2 relative overflow-hidden'>
+            <div className='border-4 rounded-lg'>
+                <div className='flex p-6'>
+                    {/* Search option */}
+                    <div className='flex flex-col flex-initial w-1/3'>
+                        <div className="mt-2 justify-center">
+                            <input
+                                type="text"
+                                placeholder="Search queries..."
+                                className=" w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
+                        </div>
 
-            <input
-                type="text"
-                placeholder="Search queries..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-            />
-            <div>
-                {queries.map((query) => (
-                    <div key={query.id} onClick={() => handleQuerySelect(query.id)} style={{ cursor: 'pointer', marginBottom: '10px' }}>
-                        <h3>{query.title}</h3>
-                        <p>{query.description}</p>
+                        <div className='pt-2 '>
+                            <div className='text-white border rounded-md bg-green-400 justify-center'>
+                                {queries.map((query) => (
+                                    <div key={query.id}
+                                        onClick={() => handleQuerySelect(query.id)}
+                                        className='p-2 m-2 bg-gray-800 rounded-md cursor-pointer'
+                                    >
+                                        <h3>{query.title}</h3>
+                                        <p>{query.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                ))}
-            </div>
-            </div>
-            <div style={{ flex: 2, padding: '20px' }}>
-                {selectedQueryId && <QueryDetail queryId={selectedQueryId} />} {/* Show QueryDetail based on selection */}
+                    {/*  QueryDetail component */}
+                    <div className='flex-initial px-8 py-14 '>
+                        {selectedQueryId && <QueryDetail queryId={selectedQueryId} />}
+                    </div>
+                </div>
             </div>
         </div>
     );
